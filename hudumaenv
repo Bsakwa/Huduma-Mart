@@ -1,1 +1,3 @@
+-- This is the environment default to creating, storing and managing our database schema
+
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./console.py

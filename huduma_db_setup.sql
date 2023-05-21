@@ -1,8 +1,8 @@
--- CREATES a new MYSQL server database hbnb_test_db
--- CREATES a new user hbnb_test
--- SETS user password to hbnb_test_pwd
+-- CREATES a new MYSQL server database huduma_db
+-- CREATES a new user huduma_dev
+-- SETS user password to huduma_dev_pwd
 -- USER should have all the priviledges only on this database
--- USER should have SELECT priviledge on databasee performance_schema
+-- USER should have SELECT priviledge on database performance_schema
 
 CREATE DATABASE IF NOT EXISTS huduma_db;
 CREATE  USER 
