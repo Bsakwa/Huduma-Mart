@@ -6,10 +6,12 @@ This module contains tests for the Location class
 import unittest
 from models.location import Location
 
+
 class TestLocation(unittest.TestCase):
     def setUp(self):
-        
-        # Create an instance of the Location class
+        """
+        This method will run before every test
+        """
         self.location = Location(name='Test Location',
                                  county='Test County',
                                  town='Test Town',
@@ -48,7 +50,7 @@ class TestLocation(unittest.TestCase):
         # Test any additional methods or behaviors of the Location class
         location = Location(name='Test Location',
                             county='Test County',
-                            town='Test Town', 
+                            town='Test Town',
                             estate='Test Estate')
 
     def test_init(self):
@@ -78,7 +80,6 @@ class TestLocation(unittest.TestCase):
         location.save()
         self.assertEqual(Location.get(location.id), location)
 
-        
+
 if __name__ == '__main__':
     unittest.main()
-

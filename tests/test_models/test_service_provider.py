@@ -48,7 +48,8 @@ class TestServiceProvider(unittest.TestCase):
         # Test setting the description of a service provider
         service_provider = ServiceProvider(description="Lorem ipsum")
         service_provider.description = "Lorem ipsum dolor sit amet"
-        self.assertEqual(service_provider.description, "Lorem ipsum dolor sit amet")
+        self.assertEqual(service_provider.description,
+                         "Lorem ipsum dolor sit amet")
 
     def test_get_category_id(self):
         # Test getting the category ID of a service provider
@@ -151,6 +152,6 @@ class TestServiceProvider(unittest.TestCase):
         service_provider = ServiceProvider(rating_count=10)
         self.assertEqual(service_provider.rating_count, 10)
 
-   
+
 if __name__ == "__main__":
     unittest.main()
