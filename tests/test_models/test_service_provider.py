@@ -152,6 +152,15 @@ class TestServiceProvider(unittest.TestCase):
         service_provider = ServiceProvider(rating_count=10)
         self.assertEqual(service_provider.rating_count, 10)
 
+    def test_add_multiple_reviews(self):
+        """Test adding multiple reviews to a service provider"""
+        service_provider = ServiceProvider(name="John Doe")
+        review1 = Review(rating=4, comment="Great service")
+        review2 = Review(rating=5, comment="Excellent work")
+        service_provider.reviews = [review1, review2]
+        self.assertEqual(len(service_provider.reviews), 2)
+        self.assertIn(review1, service_provider.reviews)
+        self.assertIn(review2, service_provider.reviews)
 
 if __name__ == "__main__":
     unittest.main()

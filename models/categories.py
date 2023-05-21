@@ -28,3 +28,13 @@ class Category(BaseModel, Base):
         Initializes a category.
         """
         super().__init__(*args, **kwargs)
+        self.service_providers = []
+
+    def __repr__(self):
+        return f"[Category] ({self.id}) {self.__dict__}"
+
+    def add_service_provider(self, service_provider):
+        """
+        Adds a service provider to the category.
+        """
+        self.service_providers.append(service_provider)

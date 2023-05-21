@@ -31,7 +31,8 @@ class ServiceProvider(BaseModel, Base):
     category_id = Column(String(128), ForeignKey('categories.id'))
     location_id = Column(String(128), ForeignKey('locations.id'))
     category = relationship('Category', back_populates='service_providers')
-    reviews = relationship('Review', backref='service_provider')
+    reviews = relationship('Review', backref='service_provider',
+                           cascade="all, delete-orphan")
 
     def __init__(self, *args, **kwargs):
         """
