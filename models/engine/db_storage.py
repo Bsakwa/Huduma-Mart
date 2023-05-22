@@ -14,11 +14,14 @@ from models.service_provider import ServiceProvider
 from os import getenv
 import sqlalchemy
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 classes = {"User": User, "Location": Location, "Category": Category,
            "Review": Review, "ServiceProvider": ServiceProvider,
            "BaseModel": BaseModel}
+
+Base = declarative_base()
 
 
 class DBStorage:
@@ -27,6 +30,7 @@ class DBStorage:
     """
     __engine = None
     __session = None
+    __Base = declarative_base()
 
     def __init__(self):
         """
