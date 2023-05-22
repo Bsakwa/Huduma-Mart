@@ -80,8 +80,9 @@ class BaseModelTests(unittest.TestCase):
         """
         string = str(self.base_model)
         self.assertEqual(string,
-                         "[BaseModel] ({}) {}".format(self.base_model.id,
-                                                      self.base_model.__dict__))
+                         "[BaseModel] ({}) {}".format
+                         (self.base_model.id,
+                          self.base_model.__dict__))
 
     def test_custom_attributes(self):
         """
@@ -93,7 +94,7 @@ class BaseModelTests(unittest.TestCase):
 
     def test_custom_attributes_to_dict(self):
         """
-        Test that custom attributes are included in the dictionary representation
+        Test that custom attributes are in dictionary representation
         """
         base_model = BaseModel(name="Test", age=25)
         dictionary = base_model.to_dict()
@@ -122,7 +123,6 @@ class BaseModelTests(unittest.TestCase):
         self.assertIsNotNone(reloaded_model)
         self.assertEqual(reloaded_model.name, "Test Model")
         self.assertEqual(reloaded_model.value, 10)
-
 
     def test_delete_removes_instance_from_storage(self):
         """

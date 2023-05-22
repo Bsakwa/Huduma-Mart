@@ -3,6 +3,7 @@
 """
 This module defines a class to manage file storage for our web app
 """
+import os
 import json
 import models
 from models.base_model import BaseModel
@@ -58,6 +59,7 @@ class FileStorage:
                 jo = json.load(f)
             for key in jo:
                 self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
+                self.new(obj)
         except:
             pass
 

@@ -11,6 +11,7 @@ from models.categories import Category
 from models.service_provider import ServiceProvider
 from models import storage
 
+
 class CategoryTests(unittest.TestCase):
     """
     Test cases for the Category class
@@ -22,7 +23,7 @@ class CategoryTests(unittest.TestCase):
         """
         name = "Electrician"
         category = Category(name=name)
-        
+
         self.assertEqual(category.name, name)
         self.assertEqual(category.service_providers, [])
 
@@ -76,7 +77,6 @@ class CategoryTests(unittest.TestCase):
         for key in expected.keys():
             self.assertEqual(expected[key], category_dict[key])
 
-   
     def test_delete(self):
         """
         Test that the delete method has the correct output
@@ -85,7 +85,6 @@ class CategoryTests(unittest.TestCase):
         category.save()
         category.delete()
         self.assertNotIn(category, storage.all().values())
-
 
     def test_update_name(self):
         """
