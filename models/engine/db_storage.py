@@ -30,7 +30,6 @@ class DBStorage:
     """
     __engine = None
     __session = None
-    __Base = declarative_base()
 
     def __init__(self):
         """
