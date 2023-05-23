@@ -1,0 +1,20 @@
+Food Vendors Delicious street food served with a smile 2e6c91a1-0742-4d24-9570-f614861f21fc 2023-05-23 09:11:04.461953 2023-05-23 09:11:04.461960
+Street Vendors Find unique goods from local street vendors 8458f759-5905-476d-a1e1-620ff6a0618d 2023-05-23 09:11:04.485554 2023-05-23 09:11:04.485582
+Artisans Handcrafted creations that showcase true artistry 21ec37de-aaea-4fe6-a518-e1b9f13007a7 2023-05-23 09:11:04.486118 2023-05-23 09:11:04.486121
+House Cleaners Professional cleaning services for your home 112fa4f6-59ab-4af3-b4b3-e7f62e1416d5 2023-05-23 09:11:04.486664 2023-05-23 09:11:04.486691
+Laundry Services Convenient laundry solutions for busy individuals ade4603e-a8c9-41b7-ac06-681f6282e837 2023-05-23 09:11:04.487144 2023-05-23 09:11:04.487147
+Car Washers Give your vehicle a sparkling clean wash e3b211bd-7f92-41a6-b494-ce2115854c7b 2023-05-23 09:11:04.487568 2023-05-23 09:11:04.487595
+Gardeners Transform your outdoor space with expert gardening 5aab7c15-896c-48f0-a6a8-c045e7be6a09 2023-05-23 09:11:04.488019 2023-05-23 09:11:04.488022
+Tailors and Seamstresses Custom-made clothing tailored to perfection be6bc774-6c9c-4274-953a-e5b9b98c4b88 2023-05-23 09:11:04.488469 2023-05-23 09:11:04.488472
+Shoe Repairers Restore and repair your favorite shoes c0ee912f-520c-478d-9af8-c5e8623f523e 2023-05-23 09:11:04.488918 2023-05-23 09:11:04.488921
+Handicrafts One-of-a-kind handmade crafts with intricate designs 76605783-6de4-45ad-9d3f-82f89176eb26 2023-05-23 09:11:04.489409 2023-05-23 09:11:04.489412
+Plumbers Skilled plumbers for all your plumbing needs fcd9ad54-2eff-41fb-adfe-8552645ad581 2023-05-23 09:11:04.489864 2023-05-23 09:11:04.489867
+Electricians Professional electricians ensuring safety and quality 585df360-7f71-46ac-b1b6-6b42d40d89a5 2023-05-23 09:11:04.490666 2023-05-23 09:11:04.490674
+House Painters Enhance your space with professional painting services b728ccfa-9fd5-40e6-8087-06c10297ebe0 2023-05-23 09:11:04.491807 2023-05-23 09:11:04.491813
+Hairdressers and Barbers Experience stylish haircuts and grooming f02f7308-3213-4e1b-b6e3-25c0be322bb5 2023-05-23 09:11:04.492911 2023-05-23 09:11:04.492918
+Mechanics Trustworthy mechanics for your vehicle repairs f432d139-f5d1-42f6-9511-e0bacfaf5589 2023-05-23 09:11:04.494051 2023-05-23 09:11:04.494058
+Babysitters Reliable care for your little ones da189cb4-2377-4490-a7a6-aec70d36e0e4 2023-05-23 09:11:04.495198 2023-05-23 09:11:04.495232
+Pet Caretakers Caring and responsible pet sitting and walking services 0f67cf20-5206-40a8-af9e-4c9a86117ba8 2023-05-23 09:11:04.496329 2023-05-23 09:11:04.496336
+Event Organizers Plan and execute memorable events 5b806f2e-7221-4c81-8664-baebb49d7a60 2023-05-23 09:11:04.497464 2023-05-23 09:11:04.497471
+Tour Guides Discover the hidden gems with knowledgeable tour guides 2fe7d28b-a201-4c25-9a4f-c22d380b1a77 2023-05-23 09:11:04.498652 2023-05-23 09:11:04.498659
+Street Performers Captivating performances by talented street artists e217fc16-baee-493c-810b-f02fede29b98 2023-05-23 09:11:04.499875 2023-05-23 09:11:04.499882
