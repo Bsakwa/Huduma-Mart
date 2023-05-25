@@ -39,3 +39,11 @@ class ServiceProvider(BaseModel, Base):
         Initializes a service provider
         """
         super().__init__(*args, **kwargs)
+
+    def to_dict(self):
+        """
+        Returns a dictionary of the instance
+        """
+        dict_rep = super().to_dict()
+        dict_rep.pop('_sa_instance_state', None)
+        return dict_rep

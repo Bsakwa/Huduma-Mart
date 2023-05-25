@@ -33,7 +33,6 @@ class Review(BaseModel, Base):
         """
         super().__init__(*args, **kwargs)
 
-
     def __str__(self):
         """
         String representation of Review

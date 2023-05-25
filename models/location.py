@@ -27,7 +27,9 @@ class Location(BaseModel, Base):
                       nullable=False)
         estate = Column(String(128),
                         nullable=False)
-    
+        service_providers = relationship("ServiceProvider",
+                                         backref="location")
+
     @staticmethod
     def get_by_name(name):
         """
@@ -70,9 +72,10 @@ class Location(BaseModel, Base):
         return "[{}] ({}) {}".format(self.__class__.__name__,
                                      self.id,
                                      self.__dict__)
+
     def to_dict(self, save_fs=None):
         """
-        Returns a dictionary containing all keys/values of __dict__ of the instance
+        Returns a dictionary __dict__ of the instance
         """
 
         dict_rep = self.__dict__.copy()
@@ -87,7 +90,7 @@ class Location(BaseModel, Base):
             dict_rep.pop('password', None)
 
         return dict_rep
-       
+
     def save(self):
         """
         Saves a Location
