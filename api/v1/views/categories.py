@@ -8,6 +8,7 @@ from api.v1.views import app_views
 from flask import Blueprint, jsonify, request
 from models.categories import Category
 from models import storage
+from models.service_provider import ServiceProvider
 
 
 @app_views.route('/categories', methods=['GET'],
@@ -77,3 +78,16 @@ def update_category(category_id):
             setattr(category, key, value)
     category.save()
     return jsonify(category.to_dict()), 200
+
+
+@app_views.route('/categories/<category_id>/service_providers',
+                 strict_slashes=False)
+def get_service_providers(category_id):
+    """
+    Returns all service providers of a category
+    """
+    category = storage.get(Category, category_id)
+    if category is None:
+        return jsonify({'error': 'Not found'}), 404
+    return jsonify([service_provider.to_dict()
+                    for service_provider in category.service_providers])
