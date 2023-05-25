@@ -1,3 +1,7 @@
 -- This is the environment default to creating, storing and managing our database schema
 
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./console.py
+
+-- This is the environment default to our RESTful API
+
+HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db HUDUMA_API_HOST=0.0.0.0 HUDUMA_API_PORT=5000 python3 -m api.v1.app
