@@ -34,6 +34,7 @@ class ServiceProvider(BaseModel, Base):
     reviews = relationship('Review', backref='service_provider',
                            cascade="all, delete-orphan")
 
+
     def __init__(self, *args, **kwargs):
         """
         Initializes a service provider
