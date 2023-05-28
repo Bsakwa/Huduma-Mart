@@ -69,8 +69,9 @@ class TestLocation(unittest.TestCase):
                             town="Karen",
                             estate="Spring Valley")
         location.save()
+        locations = len(Location.objects())
         location.delete()
-        self.assertEqual(len(Location.objects()), 0)
+        self.assertEqual(len(Location.objects()), locations - 1)
 
     def test_get(self):
         location = Location(name="Nairobi",
