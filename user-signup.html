@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Huduma Mart</title>
+    <link rel="stylesheet" href="Style.css">
+    <meta name = "viewport" 
+    content="width-device-width,initial-scale=1.0">
+<center>
+    <img src="huduma-mart.png"
+    width="150"
+    height="150">
+    <p><b>
+       HUDUMA MART
+    </b>
+    <br>
+    <i>All your services at the click of a button</i>
+    <br>
+    </p>
+</center>
+</head>
+
+<body>
+<div class="welcome">
+    <center>
+        <p><b>
+            Welcome to the Huduma Mart Portal
+        </b></p>
+    </center>
+</div>
+
+<div class="register-div">
+    <br>
+    <center>
+        <p><b>REGISTER YOUR ACCOUNT</b></p>
+    </center>
+    <br>
+    
+    <form id= "registerform" action="register.php" method="post" autocomplete="off">
+    <b><label>First Name</label></b>
+    <input type ="text" id="firstname" name="firstname" size="25" placeholder="First Name" required/>
+    <br><br>
+
+    <b><label>Last Name</label></b>
+    <input type="text" id="lastname" name="lastname" size="25" placeholder="Last Name" required>
+    <br><br>
+
+    <b><label>Email Address</label></b>
+    <input type="email" id="email" name="email" size="25" placeholder="Email Address" required>
+    <br><br>
+
+    <b><label>Mobile Phone Number</label></b>
+    <input type="text" id="phonenumber" name="phonenumber" size="25" placeholder="Phone Number" required>
+    <br><br>
+
+    <b><label>Password</label></b>
+    <input type="password" id="password" name="password" size="25" placeholder="Password" onk required>
+    <br><br>
+
+    <b><label>Confirm Password</label></b>
+    <input type="password" id="confirmpassword" name="confirmpassword" size="25" placeholder="Password" required>
+    <br><br>
+
+    <p><b><center> <button type="submit" class= "signupbtn" name= "signupbtn" onclick="return Validate()">SIGN UP</button></center></b></p>
+    <br>
+
+    </form>
+</body>
