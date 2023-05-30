@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './landingpage';
+import ServiceProviderRegistrationForm from './sp_regist';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register/*" element={<SignupPage />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+
+function SignupPage() {
+  return (
+    <div className="app-container">
+      <div className="signup-container">
+        <h2>Register</h2>
+        <ServiceProviderRegistrationForm />
+        <div className="privacy-policy"></div>
+      </div>
+      </div>
   );
 }
 

@@ -1,0 +1,112 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="tel"],
+.signup-container input[type="password"],
+.signup-container select {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.signup-container button[type="submit"] {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.signup-container button[type="submit"]:hover {
+  background-color: #800020;
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #0d98ba;
+}
+
+.privacy-policy {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.privacy-policy p {
+  margin-top: 10px;
+  font-size: 15px; /* Adjust the font size as desired */
+  text-align: center;
+}
+
+.privacy-policy a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown select {
+  bottom: unset;
+  top: 100%;
+}
+
+.town-estate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.town-estate input[type="text"] {
+  width: calc(50% - 5px);
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input input[type="password"] {
+  padding-right: 30px;
+}
+
+.custom-name,
+.custom-email,
+.custom-phone-number {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.custom-password {
+  border: 1px solid #ccc;
+}
+
+.town-estate {
+  color: blue;
+}
