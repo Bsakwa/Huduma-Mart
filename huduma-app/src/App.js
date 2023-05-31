@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './landingpage';
 import ServiceProviderRegistrationForm from './sp_regist';
 import Footer from './Footer';
+import Header from './Header';
+
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
         <Route path="/register/*" element={<SignupPage />} />
       </Routes>
       <Footer />
