@@ -99,7 +99,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; Huduma Mart 2023</p>
+        <p>&copy; Huduma Mart 2023. All rights reserved</p>
       </div>
     </footer>
   );

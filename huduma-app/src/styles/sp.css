@@ -6,13 +6,14 @@
 }
 
 .signup-container {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
   padding: 20px;
   background-color: #fff;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);*/
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .signup-container input[type="text"],
@@ -35,6 +36,8 @@
   cursor: pointer;
   display: block;
   margin: 20px auto 0;
+  border-radius: 20px;
+  padding: 10px 20px;
 }
 
 .signup-container button[type="submit"]:hover {

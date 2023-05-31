@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ServiceProviderRegistrationForm from './sp_regist';
+import LoginPage from './LoginPage';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/register/*" element={<SignupPage />} />
+	<Route path="/login/*" element={<LoginPage />} />
       </Routes>
       <Footer />
     </Router>
