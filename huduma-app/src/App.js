@@ -4,15 +4,16 @@ import ServiceProviderRegistrationForm from './sp_regist';
 import LoginPage from './LoginPage';
 import Footer from './Footer';
 import Header from './Header';
-
+import LandingPage from './LandingPage';
 
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/register/*" element={<SignupPage />} />
-	<Route path="/login/*" element={<LoginPage />} />
+        <Route path="/login/*" element={<LoginPage />} />
       </Routes>
       <Footer />
     </Router>
@@ -27,7 +28,7 @@ function SignupPage() {
         <ServiceProviderRegistrationForm />
         <div className="privacy-policy"></div>
       </div>
-      </div>
+    </div>
   );
 }
 
