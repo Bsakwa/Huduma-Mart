@@ -1,0 +1,169 @@
+/* LandingPage.css */
+
+/* Landing page container */
+.landing-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+/* Features section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  flex: 0 0 32%;
+  max-width: 32%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.feature-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Testimonials section */
+.testimonials {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.testimonial {
+  flex: 0 0 48%;
+  max-width: 48%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.category-container {
+  height: 350px;
+  /* Add any additional styling properties */
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+/* Featured Category section */
+.category-container.plumber {
+  /* CSS styles for the plumber category */
+  background-image: url('../assets/tailor.jpg');
+}
+
+.category-container.artisan {
+  /* CSS styles for the artisan category */
+  background-image: url('../assets/artisan.png');
+}
+
+.category-container.electrician {
+  /* CSS styles for the electrician category */
+  background-image: url('../assets/electrician.jpg');
+}
+
+.category-container.mechanic {
+  background-image: url('../assets/femalemechanic.jpg');
+}
+
+.category-container.builder {
+  background-image: url('../assets/builders.jpg');
+}
+
+.category-container.dj {
+  background-image: url('../assets/dj.jpg');
+}
+
+.featured-headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 300px;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.testimonial h4 {
+  margin-bottom: 5px;
+}
+
+.testimonial p {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  color: #666;
+}
+
+.testimonial-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+ }
+
+.testimonial-image img {
+  width: 100px; /* Adjust the width as needed */
+  height: 95px; /* Adjust the height as needed */
+  object-fit: cover;
+  border-radius: 60%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+}
+
+.testimonial .testimonial-image img.john-doe {
+  background-image: url('../assets/aiman.png');
+}
+
+.testimonial .testimonial-image img.jane-smith {
+  background-image: url('../assets/aiwoman.png');
+}
