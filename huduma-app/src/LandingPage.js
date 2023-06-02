@@ -1,66 +1,23 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { FaEye, FaGlobe, FaUsers } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 import './styles/LandingPage.css';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
+      {/* Hero section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Connect with the Informal Sector</h1>
-          <p>Discover local services near you and support your community.</p>
+          <img src="logo.png" alt="" className="hm-banner" />
+          <p>Access and discover day-to-day services in any location at any time.</p>
           <a href="#signup" className="btn btn-primary">Sign Up</a>
         </div>
       </section>
 
-      <section className="features">
-        {/* Existing feature cards */}
-        <div className="feature-card">
-          <img src="icon1.png" alt="Feature 1" />
-          <h3>Increased Visibility</h3>
-          <p>Showcase your skills and services to potential customers in your area.</p>
-        </div>
-        <div className="feature-card">
-          <img src="icon2.png" alt="Feature 2" />
-          <h3>Accessibility</h3>
-          <p>Reach a wide range of customers anytime, anywhere, with our user-friendly app.</p>
-        </div>
-        <div className="feature-card">
-          <img src="icon3.png" alt="Feature 3" />
-          <h3>Community Support</h3>
-          <p>Connect with your local community and contribute to its growth and development.</p>
-        </div>
-      </section>
-
-      <section className="testimonials">
-        {/* Existing testimonials */}
-        <div className="testimonial">
-          <div className="testimonial-image">
-            <img className="john-doe" src="./assets/aiman.png" alt=""/>
-          </div>
-          <div className="testimonial-content">
-            <h4>John Doe</h4>
-            <p>Electrician</p>
-            <blockquote>
-              "Huduma Mart has transformed my business. I now have a steady stream of clients and my income has doubled!"
-            </blockquote>
-          </div>
-        </div>
-        <div className="testimonial">
-          <div className="testimonial-image">
-            <img className="jane-smith" alt=""/>
-          </div>
-          <div className="testimonial-content">
-            <h4>Jane Smith</h4>
-            <p>Plumber</p>
-            <blockquote>
-              "Thanks to Huduma Mart, I can easily find plumbing jobs in my area. It's convenient and saves me a lot of time."
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
+      {/* Featured category section */}
       <section className="featured-category">
         <h2 className="featured-headline">Featured Service Providers</h2>
         <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true}>
@@ -71,6 +28,81 @@ const LandingPage = () => {
           <div className="category-container builder"></div>
           <div className="category-container dj"></div>
         </Carousel>
+      </section>
+
+      {/* Features section */}
+      <section className="features">
+        <h2 className="featured-headline">Why Huduma Mart?</h2>
+        <div className="feature-list">
+          <div className="feature-card">
+            <IconContext.Provider value={{ className: 'feature-icon' }}>
+              <FaEye />
+            </IconContext.Provider>
+            <h3>Increased Visibility</h3>
+            <p>Showcase your skills and services to potential customers within your location and beyond.</p>
+          </div>
+          <div className="feature-card">
+            <IconContext.Provider value={{ className: 'feature-icon' }}>
+              <FaGlobe />
+            </IconContext.Provider>
+            <h3>Accessibility</h3>
+            <p> Be at reach to a vast network of customers anytime, anywhere, with our user-friendly app.</p>
+          </div>
+          <div className="feature-card">
+            <IconContext.Provider value={{ className: 'feature-icon' }}>
+              <FaUsers />
+            </IconContext.Provider>
+            <h3>Community Support</h3>
+            <p>Support local communities by discovering service providers and help them grow.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials section */}
+      <section className="testimonials">
+        <h2 className="featured-headline">Testimonials</h2>
+        <div className="testimonials-wrapper">
+          <div className="testimonial">
+            <div className="testimonial-image john-doe-avatar"></div>
+            <div className="testimonial-content">
+              <h4 className="testimonial-name">John Doe</h4>
+              <p className="testimonial-profession">Electrician</p>
+              <blockquote className="testimonial-quote">
+                "Huduma Mart has transformed my business. I now have a steady stream of clients and my income has doubled!"
+              </blockquote>
+            </div>
+          </div>
+          <div className="testimonial">
+            <div className="testimonial-image jane-smith-avatar"></div>
+            <div className="testimonial-content">
+              <h4 className="testimonial-name">Jane Smith</h4>
+              <p className="testimonial-profession">Plumber</p>
+              <blockquote className="testimonial-quote">
+                "Thanks to Huduma Mart, I can easily find plumbing jobs in my area. It's convenient and saves me a lot of time."
+              </blockquote>
+            </div>
+          </div>
+          <div className="testimonial">
+            <div className="testimonial-image mark-johnson-avatar"></div>
+            <div className="testimonial-content">
+              <h4 className="testimonial-name">Mark Johnson</h4>
+              <p className="testimonial-profession">Carpenter</p>
+              <blockquote className="testimonial-quote">
+                "Huduma Mart has been a game-changer for my carpentry business. I've gained new clients and expanded my services."
+              </blockquote>
+            </div>
+          </div>
+          <div className="testimonial">
+            <div className="testimonial-image sarah-williams-avatar"></div>
+            <div className="testimonial-content">
+              <h4 className="testimonial-name">Sarah Williams</h4>
+              <p className="testimonial-profession">Painter</p>
+              <blockquote className="testimonial-quote">
+                "Using Huduma Mart has made it so easy for me to connect with customers and grow my painting business. Highly recommended!"
+              </blockquote>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
