@@ -1,21 +1,29 @@
-/* LandingPage.css */
-
 /* Landing page container */
 .landing-page {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 50px;
 }
 
 /* Hero section */
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
-.hero-content h1 {
-  font-size: 32px;
-  margin-bottom: 16px;
+.hero-content .btn {
+  border-radius: 40px; /* Adjust the value to your desired radius */
+}
+
+.hm-banner {
+  background-image: url('../assets/hmbanner.png');
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  padding: 70px;
 }
 
 .hero-content p {
@@ -23,68 +31,34 @@
   margin-bottom: 24px;
 }
 
-/* Features section */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+/* Featured category section */
+.featured-category {
   margin-bottom: 40px;
 }
 
-.feature-card {
-  flex: 0 0 32%;
-  max-width: 32%;
+.featured-headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
   text-align: center;
-  margin-bottom: 24px;
-}
-
-.feature-card img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Testimonials section */
-.testimonials {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
-
-.testimonial {
-  flex: 0 0 48%;
-  max-width: 48%;
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.testimonial img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 16px;
 }
 
 .category-container {
   height: 350px;
-  /* Add any additional styling properties */
   background-size: cover;
   background-position: center;
-  border-radius: 4px;
+  border-radius: 10px;
 }
-/* Featured Category section */
+
 .category-container.plumber {
-  /* CSS styles for the plumber category */
   background-image: url('../assets/tailor.jpg');
 }
 
 .category-container.artisan {
-  /* CSS styles for the artisan category */
   background-image: url('../assets/artisan.png');
 }
 
 .category-container.electrician {
-  /* CSS styles for the electrician category */
   background-image: url('../assets/electrician.jpg');
 }
 
@@ -100,70 +74,124 @@
   background-image: url('../assets/dj.jpg');
 }
 
-.featured-headline {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.testimonials {
+/* Features section */
+.feature-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  flex: 0 0 32%;
+  max-width: 32%;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+}
+
+.feature-card.feature-1 img {
+  background-image: url('../assets/visibility.png');
+}
+
+.feature-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.feature-card svg {
+  font-size: 40px; /* Increase the font size to make the icons larger */
+}
+
+/* Testimonials section */
+/* Testimonials section */
+.testimonials {
+  margin-bottom: 40px;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .testimonial {
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  width: 300px;
-}
-
-.testimonial img {
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.testimonial h4 {
-  margin-bottom: 5px;
-}
-
-.testimonial p {
-  color: #888;
-  margin-bottom: 10px;
-}
-
-.testimonial blockquote {
-  font-style: italic;
-  color: #666;
+  margin-bottom: 40px;
+  max-width: 300px;
+  margin-right: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-color: #fff;
 }
 
 .testimonial-image {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
- }
-
-.testimonial-image img {
-  width: 100px; /* Adjust the width as needed */
-  height: 95px; /* Adjust the height as needed */
-  object-fit: cover;
-  border-radius: 60%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
-.testimonial .testimonial-image img.john-doe {
-  background-image: url('../assets/aiman.png');
+.john-doe-avatar {
+  background-image: url('../assets/aiman.jpg');
 }
 
-.testimonial .testimonial-image img.jane-smith {
-  background-image: url('../assets/aiwoman.png');
+.jane-smith-avatar {
+  background-image: url('../assets/aiwoman.jpg');
 }
+
+.mark-johnson-avatar {
+  background-image: url('../assets/aiman2.jpg');
+}
+
+.sarah-williams-avatar {
+  background-image: url('../assets/aiwoman2.jpg');
+}
+
+.testimonial-content {
+  width: 100%;
+}
+
+.testimonial-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial-profession {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonial-quote {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+
