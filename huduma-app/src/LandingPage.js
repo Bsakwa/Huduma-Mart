@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FaEye, FaGlobe, FaUsers } from 'react-icons/fa';
+import { FaEye, FaGlobe, FaUsers, FaHandshake  } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import './styles/LandingPage.css';
 
@@ -39,22 +39,35 @@ const LandingPage = () => {
               <FaEye />
             </IconContext.Provider>
             <h3>Increased Visibility</h3>
-            <p>Showcase your skills and services to potential customers within your location and beyond.</p>
+            <p> Whether it's a gardener, an electrician,
+	  a plumber, a masseuse, an errand boy, a tailor, barber etc we are giving you a platform
+	  to showcase your skills and services
+	  to a vast network of potential customers within your location and beyond.</p>
           </div>
           <div className="feature-card">
             <IconContext.Provider value={{ className: 'feature-icon' }}>
               <FaGlobe />
             </IconContext.Provider>
             <h3>Accessibility</h3>
-            <p> Be at reach to a vast network of customers anytime, anywhere, with our user-friendly app.</p>
+            <p> When you register as a service provider, our users will be able to
+	  access and discover your services from wherever you are located, at any time with just a simple search. 
+	  </p>
           </div>
           <div className="feature-card">
             <IconContext.Provider value={{ className: 'feature-icon' }}>
               <FaUsers />
             </IconContext.Provider>
             <h3>Community Support</h3>
-            <p>Support local communities by discovering service providers and help them grow.</p>
+            <p>Support local communities by discovering service providers within your location and help them grow.</p>
           </div>
+	  <div className="feature-card">
+        <IconContext.Provider value={{ className: 'feature-icon' }}>
+          <FaHandshake />
+          </IconContext.Provider>
+          <h3>Convenience</h3>
+          <p>Enjoy the convenience of accessing day-to-day services with just a few clicks.
+	  With Huduma Mart, life just got a little easier.</p>
+        </div>
         </div>
       </section>
 
