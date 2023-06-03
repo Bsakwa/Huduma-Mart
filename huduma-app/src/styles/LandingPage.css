@@ -16,6 +16,14 @@
 
 .hero-content .btn {
   border-radius: 40px; /* Adjust the value to your desired radius */
+  font-size: 18px;
+  padding: 12px 30px;
+  background-color: #ff3542;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
 }
 
 .hm-banner {
@@ -25,6 +33,7 @@
   background-position: center;
   padding: 70px;
 }
+
 
 .hero-content p {
   font-size: 18px;
