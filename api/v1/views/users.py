@@ -13,14 +13,16 @@ from models.reviews import Review
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
-    """ Retrieves the list of all User objects """
-    
+    """
+    Retrieves the list of all User objects
+    """
     users = storage.all(User)
     users_list = []
-    email = request.args.get('email')  # Get the email parameter from the request query string
+    email = request.args.get('email')
     if email:
         # Check if the email exists in the database
-        filtered_users = [user for user in users.values() if user.email == email]
+        filtered_users = [user for user in users.values()
+                          if user.email == email]
         if not filtered_users:
             # Email does not exist, return an error message
             return jsonify({'error': 'User does not exist. Signup.'}), 404
@@ -29,6 +31,7 @@ def get_users():
         # No email parameter provided, return all users
         users_list = [user.to_dict() for user in users.values()]
     return jsonify(users_list)
+
 
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 def get_user(user_id):
