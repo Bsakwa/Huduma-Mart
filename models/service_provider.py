@@ -19,7 +19,8 @@ class ServiceProvider(BaseModel, Base):
 
     models.mystorage = "db"
     __tablename__ = 'service_providers'
-    description = Column(String(128))
+    description = Column(String(128),
+                         nullable=True)
     name = Column(String(128),
                   nullable=False)
     email = Column(String(128),
