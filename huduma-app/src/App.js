@@ -5,15 +5,17 @@ import LoginPage from './LoginPage';
 import Footer from './Footer';
 import Header from './Header';
 import LandingPage from './LandingPage';
+import HomePage from './HomePage';
 
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
+	<Route path="/home" element={<HomePage />} />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/register/*" element={<SignupPage />} />
-        <Route path="/login/*" element={<LoginPage />} />
+        <Route path="/register/" element={<SignupPage />} />
+        <Route path="/login/" element={<LoginPage />} />
       </Routes>
       <Footer />
     </Router>
