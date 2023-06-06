@@ -14,15 +14,30 @@ from models.categories import Category
 
 
 @app_views.route('/service_providers', methods=['GET'], strict_slashes=False)
-def get_all_service_providers():
+def get_service_provid():
     """
-    Retrieves the list of all Service Providers
+    Retrieves the list of all Service Provider objects
     """
-    service_providers = storage.all(ServiceProvider).values()
-    list_service_providers = []
-    for service_provider in service_providers:
-        list_service_providers.append(service_provider.to_dict())
-    return jsonify(list_service_providers)
+    service_providers = storage.all(ServiceProvider)
+    service_providers_list = []
+    email = request.args.get('email')
+    if email:
+        # Check if the email exists in the database
+        filtered_service_providers = [service_provider for service_provider
+                                      in service_providers.values()
+                                      if service_provider.email == email]
+        if not filtered_service_providers:
+            # Email does not exist, return an error message
+            return jsonify({'error': 'Service Provider does not exist.'}), 404
+        service_providers_list = [service_provider.to_dict()
+                                  for service_provider
+                                  in filtered_service_providers]
+    else:
+        # No email parameter provided, return all service providers
+        service_providers_list = [service_provider.to_dict()
+                                  for service_provider
+                                  in service_providers.values()]
+    return jsonify(service_providers_list)
 
 
 @app_views.route('/service_providers/<service_provider_id>',
