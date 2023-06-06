@@ -10,15 +10,27 @@ import HomePage from './HomePage';
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
-	<Route path="/home" element={<HomePage />} />
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/register/" element={<SignupPage />} />
-        <Route path="/login/" element={<LoginPage />} />
+        <Route path="/" element={<HeaderWithRoutes />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/register" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
     </Router>
+  );
+}
+
+function HeaderWithRoutes() {
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </>
   );
 }
 

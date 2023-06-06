@@ -62,7 +62,7 @@ const LoginPage = () => {
 
         // Email does not exist in the database
         console.log('Email does not exist in the database');
-        setEmailError('Invalid password entered. Please try again.');
+        setEmailError('Invalid email entered. Please try again.');
 	// Add your logic to display an error message or handle the case accordingly
       } else {
         console.log('Error occurred while retrieving emails:', usersResponse.status, providersResponse.status);
@@ -88,7 +88,7 @@ const LoginPage = () => {
             fullWidth
             value={email}
             onChange={handleChange}
-            error={!!emailError}
+            error={Boolean(email) && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)}
             helperText={emailError}
           />
 
