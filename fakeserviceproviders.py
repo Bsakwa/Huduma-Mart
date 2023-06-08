@@ -20,7 +20,7 @@ categories = list(storage.all(Category).values())
 locations = list(storage.all(Location).values())
 
 # Determine the number of service providers to create
-num_providers = 3
+num_providers = 20
 
 if not categories or not locations:
     raise Exception("No categories or locations found in the database.")
