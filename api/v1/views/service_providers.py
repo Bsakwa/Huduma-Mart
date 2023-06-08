@@ -14,13 +14,16 @@ from models.categories import Category
 
 
 @app_views.route('/service_providers', methods=['GET'], strict_slashes=False)
-def get_service_provid():
+def query_service_providers():
     """
-    Retrieves the list of all Service Provider objects
+    Retrieves the list of Service Provider
+    objects based on category name, email, or location
     """
     service_providers = storage.all(ServiceProvider)
-    service_providers_list = []
+    category_name = request.args.get('category')
     email = request.args.get('email')
+    location_query = request.args.get('location')
+
     if email:
         # Check if the email exists in the database
         filtered_service_providers = [service_provider for service_provider
@@ -29,14 +32,82 @@ def get_service_provid():
         if not filtered_service_providers:
             # Email does not exist, return an error message
             return jsonify({'error': 'Service Provider does not exist.'}), 404
+
         service_providers_list = [service_provider.to_dict()
                                   for service_provider
                                   in filtered_service_providers]
+
+    elif location_query:
+        # Filter service providers based on the location
+        locations = storage.all(Location).values()
+        matching_locations = [loc for loc in locations
+                              if (loc.name.lower() == location_query.lower() or
+                                  loc.town.lower() == location_query.lower() or
+                                  loc.estate.lower() == location_query.lower()
+                                  )
+                              ]
+
+        if not matching_locations:
+            return jsonify({'error':
+                            'No providers found'}), 404
+
+        filtered_service_providers = [
+            service_provider for service_provider in service_providers.values()
+            if service_provider.location_id in [loc.id for
+                                                loc in matching_locations]
+        ]
+
+        if category_name:
+            # Find the category ID based on the category name
+            category_id = None
+            categories = storage.all(Category).values()
+            for category in categories:
+                if category.name.lower() == category_name.lower():
+                    category_id = category.id
+                    break
+
+            if category_id is None:
+                return jsonify({'error': 'Category not found'}), 404
+
+            # Filter service providers based on the category ID
+            filtered_service_providers = [
+                service_provider for service_provider
+                in filtered_service_providers
+                if service_provider.category_id == category_id
+            ]
+
+        service_providers_list = [service_provider.to_dict()
+                                  for service_provider
+                                  in filtered_service_providers]
+
+    elif category_name:
+        # Find the category ID based on the category name
+        category_id = None
+        categories = storage.all(Category).values()
+        for category in categories:
+            if category.name.lower() == category_name.lower():
+                category_id = category.id
+                break
+
+        if category_id is None:
+            return jsonify({'error': 'Category not found'}), 404
+
+        # Filter service providers based on the category ID
+        filtered_service_providers = [
+            service_provider for service_provider in service_providers.values()
+            if service_provider.category_id == category_id
+        ]
+
+        service_providers_list = [service_provider.to_dict()
+                                  for service_provider
+                                  in filtered_service_providers]
+
     else:
-        # No email parameter provided, return all service providers
+        # No category, email, or location param return all service providers
         service_providers_list = [service_provider.to_dict()
                                   for service_provider
                                   in service_providers.values()]
+
     return jsonify(service_providers_list)
 
 
