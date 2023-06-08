@@ -5,7 +5,7 @@ Handles User registration and Login
 """
 
 from api.v1.views import app_views
-from flask import jsonify, abort, request, Blueprint
+from flask import jsonify, abort, request, Blueprint, session
 from models import storage
 from models.user import User
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -24,10 +24,10 @@ def register():
     # Check if any user field matches the provided values
     users = storage.all(User)
     for user in users.values():
-        if [(user.email == email
+        if (user.email == email
              or user.first_name == first_name
              or user.last_name == last_name
-             )]:
+             ):
             return jsonify({'message': 'User already exists. Log in.'}), 409
 
     # Create a new user
@@ -60,3 +60,10 @@ def login():
     session = {'user_id': user.id, 'email': user.email}
 
     return jsonify({'message': 'Log in : Success', 'session': session}), 200
+
+
+@app_views.route('/logout', methods=['POST'])
+def logout():
+    session.clear()  # Clear the session data
+
+    return jsonify({'message': 'Logout successful'}), 200
