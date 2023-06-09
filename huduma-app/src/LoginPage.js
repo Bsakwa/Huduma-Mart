@@ -25,7 +25,7 @@ const LoginPage = () => {
       setEmailError('');
     } else if (event.target.name === 'password') {
       setPassword(event.target.value);
-      setPasswordError(''); 
+      setPasswordError('');
     }
   };
 
@@ -46,17 +46,21 @@ const LoginPage = () => {
     }
 
     try {
-      // Make a POST request to the login endpoint
-      const response = await axios.post('http://localhost:5000/api/v1/login', { email, password });
+      const response = await axios.get('http://localhost:5000/api/v1/users_and_service_providers_cred', { email, password });
       console.log('Login Response:', response);
 
       if (response.status === 200) {
-        // Login successful, redirect to the home page
-        navigate('/home');
-      } else {
-        console.log('Login failed:', response.data.message);
-	setPasswordError('Invalid password');
-        // Add your logic to display an error message or handle the error accordingly
+        const credentials = response.data;
+        const match = credentials.find((cred) => cred.email === email && cred.password === password);
+
+        if (match) {
+          // Login successful, redirect to the home page
+          navigate('/home');
+        } else {
+          console.log('Login failed: Invalid email or password');
+          setPasswordError('Invalid password');
+          // Add your logic to display an error message or handle the error accordingly
+        }
       }
     } catch (error) {
       console.log('Error occurred while logging in:', error.message);
@@ -82,7 +86,7 @@ const LoginPage = () => {
             fullWidth
             value={email}
             onChange={handleChange}
-	    style={{ marginBottom: '20px', width: '100%' }}
+            style={{ marginBottom: '20px', width: '100%' }}
             error={Boolean(email) && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)}
             helperText={emailError}
           />
@@ -95,9 +99,9 @@ const LoginPage = () => {
             fullWidth
             value={password}
             onChange={handleChange}
-	    style={{ marginBottom: '10px', width: '100%' }}
-	    error={Boolean(passwordError)}
-	    helperText={passwordError}
+            style={{ marginBottom: '10px', width: '100%' }}
+            error={Boolean(passwordError)}
+            helperText={passwordError}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -107,7 +111,6 @@ const LoginPage = () => {
                 </InputAdornment>
               ),
             }}
-
           />
 
           <div className="button-container">
