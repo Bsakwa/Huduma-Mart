@@ -8,20 +8,8 @@ from api.v1.views import app_views
 from flask import jsonify, abort, request, Blueprint, session
 from models import storage
 from models.user import User
+from models.service_provider import ServiceProvider
 from werkzeug.security import generate_password_hash, check_password_hash
-
-
-def get_user_from_session():
-    user_id = session.get('user_id')
-    email = session.get('email')
-
-    if user_id and email:
-        # Query the user based on the session data
-        user = storage.get(User, user_id)
-        if user and user.email == email:
-            return user
-
-    return None
 
 
 @app_views.route('/register', methods=['POST'])
@@ -38,13 +26,12 @@ def register():
     users = storage.all(User)
     for user in users.values():
         if (user.email == email
-            or user.first_name == first_name
-            or user.last_name == last_name)
-        :
+           or user.first_name == first_name
+           or user.last_name == last_name):
             return jsonify({'message': 'User already exists. Log in.'}), 409
 
     # Create a new user
-    user = User(email=email, password=generate_password_hash(password),
+    user = User(email=email, password=password,
                 first_name=first_name, last_name=last_name)
     storage.new(user)
     storage.save()
@@ -52,7 +39,6 @@ def register():
     return jsonify({'message': 'User registered successfully'}), 201
 
 
-# Login route
 @app_views.route('/login', methods=['POST'])
 def login():
     email = request.json['email']
@@ -65,9 +51,9 @@ def login():
     users = storage.all(User).values()
     user = next((user for user in users if user.email == email), None)
 
+    # Check if the user exists and the password is correct
     if not user or not check_password_hash(user.password, password):
         return jsonify({'message': 'Invalid email or password'}), 401
-
     # Create a session for the logged-in user
     # You can customize the session implementation based on your requirements
     session['user_id'] = user.id
@@ -97,3 +83,19 @@ def profile():
 def logout():
     session.clear()  # Clear the session data
     return jsonify({'message': 'Logout successful'}), 200
+
+
+@app_views.route('/users_and_service_providers_cred', methods=['GET'])
+def find_users_and_service_providers():
+    users = storage.all(User).values()
+    service_providers = storage.all(ServiceProvider).values()
+    user_credentials = [{'email': user.email, 'password': user.password}
+                        for user in users]
+    service_provider_credentials = [{'email': sp.email,
+                                     'password': sp.password}
+                                    for sp in service_providers]
+    credentials = user_credentials + service_provider_credentials
+    # Set the user's credentials in the session
+    session['credentials'] = credentials
+
+    return jsonify(credentials)
