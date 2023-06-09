@@ -11,6 +11,19 @@ from models.user import User
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
+def get_user_from_session():
+    user_id = session.get('user_id')
+    email = session.get('email')
+
+    if user_id and email:
+        # Query the user based on the session data
+        user = storage.get(User, user_id)
+        if user and user.email == email:
+            return user
+
+    return None
+
+
 @app_views.route('/register', methods=['POST'])
 def register():
     email = request.json['email']
@@ -25,9 +38,9 @@ def register():
     users = storage.all(User)
     for user in users.values():
         if (user.email == email
-             or user.first_name == first_name
-             or user.last_name == last_name
-             ):
+            or user.first_name == first_name
+            or user.last_name == last_name)
+        :
             return jsonify({'message': 'User already exists. Log in.'}), 409
 
     # Create a new user
@@ -57,13 +70,30 @@ def login():
 
     # Create a session for the logged-in user
     # You can customize the session implementation based on your requirements
-    session = {'user_id': user.id, 'email': user.email}
+    session['user_id'] = user.id
+    session['email'] = user.email
 
-    return jsonify({'message': 'Log in : Success', 'session': session}), 200
+    return jsonify({'message': 'Log in: Success', 'session': session}), 200
+
+
+@app_views.route('/profile', methods=['GET'])
+def profile():
+    user = get_user_from_session()
+    if user:
+        return jsonify({
+            'message': 'Profile retrieved successfully',
+            'user': {
+                'id': user.id,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name
+            }
+        }), 200
+    else:
+        return jsonify({'message': 'User not logged in'}), 401
 
 
 @app_views.route('/logout', methods=['POST'])
 def logout():
     session.clear()  # Clear the session data
-
     return jsonify({'message': 'Logout successful'}), 200
