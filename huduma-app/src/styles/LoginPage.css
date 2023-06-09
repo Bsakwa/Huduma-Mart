@@ -35,6 +35,10 @@
   align-items: center;
 }
 
+.login-form > * {
+  margin-bottom: 16px;
+}
+
 .button-container {
   margin-top: 16px;
 }

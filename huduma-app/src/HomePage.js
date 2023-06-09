@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { FaHome, FaUser, FaCog, FaChartBar, FaSignOutAlt, FaBell, FaEnvelope } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles/HomePage.css'; // Import the CSS file
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the Carousel styles
 import { Carousel } from 'react-responsive-carousel';
+import axios from 'axios';
 
 const SearchResultProfile = ({ provider }) => {
   return (
@@ -25,6 +26,7 @@ const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showNoResults, setShowNoResults] = useState(false);
   const itemsPerPage = 6;
+  const navigate = useNavigate();
 
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
@@ -58,6 +60,20 @@ const HomePage = () => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
+  };
+  
+  const handleLogout = async () => {
+    try {
+      // Make a POST request to the logout endpoint
+      await axios.post('http://localhost:5000/api/v1/logout');
+
+      // Clear session and redirect to the landing page
+      sessionStorage.removeItem('session');
+      navigate('/');
+    } catch (error) {
+      console.log('Error occurred while logging out:', error.message);
+      // Add your logic to display an error message or handle the error accordingly
+    }
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -104,7 +120,7 @@ const HomePage = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/logout">
+                <Link onClick={handleLogout}>
                   <FaSignOutAlt className="icon" /> Logout
                 </Link>
               </li>

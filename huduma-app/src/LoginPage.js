@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, InputAdornment, IconButton } from '@mui/material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import './styles/LoginPage.css';
 
@@ -11,12 +13,20 @@ import appleIcon from './assets/apple.png';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setEmail(event.target.value);
-    setEmailError('');
+    if (event.target.name === 'email') {
+      setEmail(event.target.value);
+      setEmailError('');
+    } else if (event.target.name === 'password') {
+      setPassword(event.target.value);
+      setPasswordError(''); 
+    }
   };
 
   const validateEmail = () => {
@@ -36,42 +46,26 @@ const LoginPage = () => {
     }
 
     try {
-      // Get all user emails
-      const usersResponse = await axios.get('http://localhost:5000/api/v1/users');
-      console.log('Users Response:', usersResponse);
+      // Make a POST request to the login endpoint
+      const response = await axios.post('http://localhost:5000/api/v1/login', { email, password });
+      console.log('Login Response:', response);
 
-      // Get all service provider emails
-      const providersResponse = await axios.get('http://localhost:5000/api/v1/service_providers');
-      console.log('Service Providers Response:', providersResponse);
-
-      if (usersResponse.status === 200 && providersResponse.status === 200) {
-        const userEmails = usersResponse.data.map((user) => user.email);
-        const providerEmails = providersResponse.data.map((provider) => provider.email);
-        const allEmails = [...userEmails, ...providerEmails];
-
-        if (allEmails.includes(email)) {
-          // Email exists in either users or service providers
-          console.log('Email exists in the database');
-
-          // Determine the userType based on the email match
-          const userType = userEmails.includes(email) ? 'user' : 'serviceProvider';
-
-          navigate('/home', { state: { email: email, userType: userType } });
-          return;
-        }
-
-        // Email does not exist in the database
-        console.log('Email does not exist in the database');
-        setEmailError('Invalid email entered. Please try again.');
-	// Add your logic to display an error message or handle the case accordingly
+      if (response.status === 200) {
+        // Login successful, redirect to the home page
+        navigate('/home');
       } else {
-        console.log('Error occurred while retrieving emails:', usersResponse.status, providersResponse.status);
+        console.log('Login failed:', response.data.message);
+	setPasswordError('Invalid password');
         // Add your logic to display an error message or handle the error accordingly
       }
     } catch (error) {
-      console.log('Error occurred while validating email:', error.message);
+      console.log('Error occurred while logging in:', error.message);
       // Add your logic to display an error message or handle the error accordingly
     }
+  };
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -88,8 +82,32 @@ const LoginPage = () => {
             fullWidth
             value={email}
             onChange={handleChange}
+	    style={{ marginBottom: '20px', width: '100%' }}
             error={Boolean(email) && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)}
             helperText={emailError}
+          />
+
+          <TextField
+            name="password"
+            type={showPassword ? 'text' : 'password'}
+            label="Password"
+            required
+            fullWidth
+            value={password}
+            onChange={handleChange}
+	    style={{ marginBottom: '10px', width: '100%' }}
+	    error={Boolean(passwordError)}
+	    helperText={passwordError}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleTogglePasswordVisibility} edge="end">
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+
           />
 
           <div className="button-container">

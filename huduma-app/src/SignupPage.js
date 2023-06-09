@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, TextField, InputAdornment, IconButton } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import './styles/SignupPage.css';
 
@@ -91,7 +92,7 @@ const SignupUserPage = () => {
             fullWidth
             value={email}
             onChange={handleChange}
-            style={{ marginBottom: '20px', width: '100%' }}
+            style={{ marginBottom: '10px', width: '100%' }}
             error={Boolean(email) && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)}
             helperText={emailError}
           />
@@ -111,7 +112,7 @@ const SignupUserPage = () => {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton onClick={handleTogglePasswordVisibility} edge="end">
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
                   </IconButton>
                 </InputAdornment>
               ),
