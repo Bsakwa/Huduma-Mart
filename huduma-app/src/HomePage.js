@@ -1,19 +1,37 @@
 import React, { useState } from 'react';
-import { FaHome, FaUser, FaCog, FaChartBar, FaSignOutAlt, FaBell, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaUser, FaCog, FaChartBar, FaSignOutAlt, FaBell, FaEnvelope, FaPhone, FaEnvelopeOpen, FaUserCircle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import './styles/HomePage.css'; // Import the CSS file
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the Carousel styles
+import './styles/HomePage.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import axios from 'axios';
 
 const SearchResultProfile = ({ provider }) => {
+  const { avatar, name, phone_number, location, email, category } = provider;
+
   return (
     <div className="search-result-profile">
-      <img src={provider.avatar} alt={provider.name} className="avatar" />
-      <h3 className="name">{provider.name}</h3>
-      <p className="phone-number">{provider.phone_number}</p>
-      <p className="location">{provider.location}</p>
-      <p className="category">{provider.category}</p>
+      <div className="avatar">
+        {avatar ? (
+          <img src={avatar} alt={name} />
+        ) : (
+          <FaUserCircle className="default-avatar" />
+        )}
+      </div>
+      <h3 className="name">{name}</h3>
+      <p className="location">{location}</p>
+      <p className="category">{category}</p>
+      <div className="contact-icons">
+        <a href={`tel:${phone_number}`} className="contact-icon">
+          <FaPhone />
+        </a>
+        <a href={`mailto:${email}`} className="contact-icon">
+          <FaEnvelopeOpen />
+        </a>
+        <Link to={`/direct-message/${provider.id}`} className="contact-icon">
+          <FaEnvelope />
+        </Link>
+      </div>
     </div>
   );
 };
@@ -25,7 +43,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [showNoResults, setShowNoResults] = useState(false);
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
   const navigate = useNavigate();
 
   const handleCategoryChange = (event) => {
@@ -64,26 +82,22 @@ const HomePage = () => {
   
   const handleLogout = async () => {
     try {
-      // Make a POST request to the logout endpoint
       await axios.post('http://localhost:5000/api/v1/logout');
-
-      // Clear session and redirect to the landing page
       sessionStorage.removeItem('session');
       navigate('/');
     } catch (error) {
       console.log('Error occurred while logging out:', error.message);
-      // Add your logic to display an error message or handle the error accordingly
     }
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = searchResults.length > 0 ? searchResults.slice(indexOfFirstItem, indexOfLastItem) : [];
-
   const totalPages = Math.ceil(searchResults.length / itemsPerPage);
 
   return (
     <div className="homepage">
+      {/* Sidebar */}
       <div className="sidebar">
         <div className="nav-container">
           <div className="logo"></div>
@@ -128,31 +142,11 @@ const HomePage = () => {
           </nav>
         </div>
       </div>
+
+      {/* Content */}
       <div className="content">
-        <section className="featured-category">
-          <h2 className="featured-headline">Access a wide range of service providers with a simple search</h2>
-          <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true}>
-            <div className="category-container plumber">
-              <img src="image1.jpg" alt="" />
-            </div>
-            <div className="category-container artisan">
-              <img src="image2.jpg" alt="" />
-            </div>
-            <div className="category-container electrician">
-              <img src="image3.jpg" alt="" />
-            </div>
-            <div className="category-container mechanic">
-              <img src="image4.jpg" alt="" />
-            </div>
-            <div className="category-container builder">
-              <img src="image5.jpg" alt="" />
-            </div>
-            <div className="category-container dj">
-              <img src="image6.jpg" alt="" />
-            </div>
-          </Carousel>
-        </section>
         <div className="content-section">
+          {/* Search Filter */}
           <section className="search-filter">
             <div className="search-bar">
               <form onSubmit={handleSearchSubmit}>
@@ -198,10 +192,39 @@ const HomePage = () => {
               ) : null}
             </div>
           </section>
+
+          {/* Featured Category */}
+          <section className="featured-category">
+            <h2 className="featured-headline">Access a wide range of service providers with a simple search</h2>
+            <Carousel showArrows={true} showThumbs={false} autoPlay={true} infiniteLoop={true}>
+              <div className="category-container plumber">
+                <img src="image1.jpg" alt="" />
+              </div>
+              <div className="category-container artisan">
+                <img src="image2.jpg" alt="" />
+              </div>
+              <div className="category-container electrician">
+                <img src="image3.jpg" alt="" />
+              </div>
+              <div className="category-container mechanic">
+                <img src="image4.jpg" alt="" />
+              </div>
+              <div className="category-container builder">
+                <img src="image5.jpg" alt="" />
+              </div>
+              <div className="category-container dj">
+                <img src="image6.jpg" alt="" />
+              </div>
+            </Carousel>
+          </section>
+
+          {/* Provider Profiles */}
           <section className="provider-profiles">
             {/* Add provider profiles here */}
           </section>
         </div>
+
+        {/* Additional Content Sections */}
         <div className="content-section">
           {/* Add more content sections here */}
         </div>
