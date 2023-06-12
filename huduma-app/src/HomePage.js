@@ -65,7 +65,7 @@ const HomePage = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/v1/service_providers?category=${category}&location=${location}`);
+      const response = await fetch(`http://100.25.222.45:5000/api/v1/service_providers?category=${category}&location=${location}`);
       const data = await response.json();
       setSearchResults(data);
     } catch (error) {
@@ -82,7 +82,7 @@ const HomePage = () => {
   
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:5000/api/v1/logout');
+      await axios.post('http://100.25.222.45:5000/api/v1/logout');
       sessionStorage.removeItem('session');
       navigate('/');
     } catch (error) {

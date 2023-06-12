@@ -46,24 +46,21 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/users_and_service_providers_cred', { email, password });
+      const response = await axios.post('http://100.25.222.45:5000/api/v1/login', { email, password });
       console.log('Login Response:', response);
 
       if (response.status === 200) {
-        const credentials = response.data;
-        const match = credentials.find((cred) => cred.email === email && cred.password === password);
-
-        if (match) {
-          // Login successful, redirect to the home page
-          navigate('/home');
-        } else {
-          console.log('Login failed: Invalid email or password');
-          setPasswordError('Invalid password');
-          // Add your logic to display an error message or handle the error accordingly
-        }
+        // Login successful, redirect to the home page
+        navigate('/home');
+      } else {
+        console.log('Login failed: Invalid email or password');
+        setPasswordError('Invalid email or password');
+	
+        // Add your logic to display an error message or handle the error accordingly
       }
     } catch (error) {
       console.log('Error occurred while logging in:', error.message);
+      setPasswordError('Invalid email or password');
       // Add your logic to display an error message or handle the error accordingly
     }
   };

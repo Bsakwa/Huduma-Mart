@@ -53,7 +53,7 @@ const SignupUserPage = () => {
 
     try {
       // Make a POST request to the register endpoint
-      const response = await axios.post('http://localhost:5000/api/v1/register', {
+      const response = await axios.post('http://100.25.222.45:5000/api/v1/register', {
         email,
         password,
         first_name: firstName,
