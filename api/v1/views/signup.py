@@ -9,7 +9,8 @@ from flask import jsonify, abort, request, Blueprint, session
 from models import storage
 from models.user import User
 from models.service_provider import ServiceProvider
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
+from datetime import datetime
 
 
 @app_views.route('/register', methods=['POST'])
@@ -47,36 +48,60 @@ def login():
     if not email or not password:
         return jsonify({'message': 'Missing email or password'}), 400
 
-    # Query the user by email
+    # Retrieve user credentials
     users = storage.all(User).values()
-    user = next((user for user in users if user.email == email), None)
+    service_providers = storage.all(ServiceProvider).values()
+    user_credentials = [{'email': user.email, 'password': user.password}
+                        for user in users]
+    service_provider_credentials = [{'email': sp.email,
+                                     'password': sp.password}
+                                    for sp in service_providers]
+    credentials = user_credentials + service_provider_credentials
 
-    # Check if the user exists and the password is correct
-    if not user or not check_password_hash(user.password, password):
+    # Check if the provided email and password match any credentials
+    matched_credentials = next(
+        (cred for cred in credentials if cred['email'] == email and
+         cred['password'] == password), None)
+
+    if not matched_credentials:
         return jsonify({'message': 'Invalid email or password'}), 401
-    # Create a session for the logged-in user
-    # You can customize the session implementation based on your requirements
-    session['user_id'] = user.id
-    session['email'] = user.email
 
-    return jsonify({'message': 'Log in: Success', 'session': session}), 200
+    # Create a session for the logged-in user
+    session['credentials'] = matched_credentials
+
+    # Store the user login information in the log file
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    log_entry = f'Email: {session["credentials"]["email"]}, Timestamp: {timestamp}\n'
+    with open('login.log', 'a') as log_file:
+        log_file.write(log_entry)
+
+    return jsonify({'message': 'Login successful', 'session': session}), 200
 
 
 @app_views.route('/profile', methods=['GET'])
 def profile():
-    user = get_user_from_session()
-    if user:
-        return jsonify({
-            'message': 'Profile retrieved successfully',
-            'user': {
-                'id': user.id,
-                'email': user.email,
-                'first_name': user.first_name,
-                'last_name': user.last_name
-            }
-        }), 200
-    else:
-        return jsonify({'message': 'User not logged in'}), 401
+    if 'credentials' in session:
+        credentials = session['credentials']
+        email = credentials['email']
+        password = credentials['password']
+
+        # Retrieve the user based on email and password from the log file
+        users = []
+        with open('login.log', 'r') as log_file:
+            for line in log_file:
+                line_parts = line.strip().split(',')
+                log_email = line_parts[0].split(':')[1].strip()
+                timestamp = line_parts[1].split(':')[1].strip()
+                if log_email == email:
+                    users.append({'email': log_email, 'timestamp': timestamp})
+
+        if users:
+            return jsonify({
+                'message': 'Profile retrieved successfully',
+                'user': users[-1]  # Retrieve the most recent user login entry
+            }), 200
+
+    return jsonify({'message': 'User not logged in'}), 401
 
 
 @app_views.route('/logout', methods=['POST'])
@@ -85,7 +110,7 @@ def logout():
     return jsonify({'message': 'Logout successful'}), 200
 
 
-@app_views.route('/users_and_service_providers_cred', methods=['GET'])
+@app_views.route('/user_cred', methods=['GET'])
 def find_users_and_service_providers():
     users = storage.all(User).values()
     service_providers = storage.all(ServiceProvider).values()
@@ -95,7 +120,19 @@ def find_users_and_service_providers():
                                      'password': sp.password}
                                     for sp in service_providers]
     credentials = user_credentials + service_provider_credentials
-    # Set the user's credentials in the session
-    session['credentials'] = credentials
+
+    if not credentials:
+        return jsonify({'message': 'No credentials found'}), 401
 
     return jsonify(credentials)
+
+
+@app_views.route('/logged_users', methods=['GET'])
+def logged_users():
+    users = []
+    with open('login.log', 'r') as log_file:
+        for line in log_file:
+            email, timestamp = line.strip().split(',')
+            users.append({'email': email.split(':')[1].strip(), 'timestamp': timestamp.split(':')[1].strip()})
+
+    return jsonify({'logged_users': users}), 200
