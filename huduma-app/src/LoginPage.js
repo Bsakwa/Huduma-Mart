@@ -46,7 +46,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post('http://100.25.222.45:5000/api/v1/login', { email, password });
+      const response = await axios.post('http://100.25.222.45/api/v1/login', { email, password });
       console.log('Login Response:', response);
 
       if (response.status === 200) {
