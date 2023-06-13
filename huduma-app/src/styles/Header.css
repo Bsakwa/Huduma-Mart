@@ -13,9 +13,9 @@ nav {
 
 .logo {
   background-image: url("../assets/huduma.png");
-  background-size: 100px 100px;
+  background-size: contain;
   background-repeat: no-repeat;
-  width: 100px; /* Adjust the width and height as per your requirements */
+  width: 100px; /* Adjust the width as per your requirements */
   height: 80px;
   margin-top: -20px;
 }
@@ -23,11 +23,10 @@ nav {
 .slogan {
   font-size: 20px;
   color: #ccc;
-  margin-left: 40px;
+  margin-left: 20px; /* Adjust the margin as per your requirements */
   font-weight: bold;
   display: flex;
   text-align: center;
-  margin-right: -100px;
 }
 
 .search-bar {
@@ -44,7 +43,7 @@ nav {
 }
 
 .search-icon {
-  color: orange; /* Set the color to orange */
+  color: orange;
   margin-left: 8px;
   cursor: pointer;
 }
@@ -52,11 +51,11 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
+  margin-left: 20px; /* Adjust the margin as per your requirements */
 }
 
 .nav-links li {
   margin-left: 16px;
-  margin-top: 15px;
 }
 
 .nav-links a {
@@ -71,22 +70,20 @@ nav {
 /* Media Queries */
 @media (max-width: 768px) {
   .logo {
-    display: none;
+    width: 80px; /* Adjust the width as per your requirements */
+    margin-top: 0;
   }
-  
+
   .slogan {
     display: none;
   }
-  
+
   .search-bar input[type="text"] {
     padding: 8px;
   }
-  
+
   .nav-links li {
     margin-left: 10px;
-  }
-  
-  .nav-links {
-    margin-left: 0;
+    margin-top: 0;
   }
 }

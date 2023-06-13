@@ -28,7 +28,6 @@
   background-color: #b30015;
 }
 
-
 .hm-banner {
   background-image: url('../assets/hmbanner.png');
   width: 50%;
@@ -101,14 +100,14 @@
 }
 
 .feature-card {
-  flex: 0 0 32%;
-  max-width: 32%;
+  flex: 0 0 100%;
+  max-width: 100%;
   text-align: center;
   margin-bottom: 25px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  margin-right: 20px;
+  margin-right: 0;
   box-sizing: border-box;
 }
 
@@ -210,3 +209,54 @@
   margin-bottom: 0;
 }
 
+/* Media Queries */
+@media (max-width: 1200px) {
+  .landing-page {
+    padding: 30px;
+  }
+  
+  .hero {
+    margin-bottom: 80px;
+  }
+  
+  .hm-banner {
+    padding: 80px;
+  }
+  
+  .feature-card {
+    flex: 0 0 48%;
+    max-width: 48%;
+    margin-right: 4%;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial {
+    max-width: 240px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-page {
+    padding: 20px;
+  }
+  
+  .hero {
+    margin-bottom: 60px;
+  }
+  
+  .hm-banner {
+    padding: 60px;
+  }
+  
+  .feature-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  
+  .testimonial {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}

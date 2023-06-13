@@ -1,5 +1,176 @@
-/* homepage.css */
+/* Header styles */
+header {
+  background-color: #333;
+  padding: 10px;
+  height: auto;
+}
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  background-image: url("../assets/huduma.png");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 80px;
+  margin-top: -20px;
+}
+
+.slogan {
+  font-size: 20px;
+  color: #ccc;
+  margin-left: 40px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  margin-right: -100px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background-color: white;
+}
+
+.search-icon {
+  color: orange;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 16px;
+  margin-top: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .logo,
+  .slogan {
+    display: none;
+  }
+
+  .search-bar input[type="text"] {
+    padding: 8px;
+  }
+
+  .nav-links li {
+    margin-left: 10px;
+  }
+
+  .nav-links {
+    margin-left: 0;
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid orange;
+  margin-bottom: 20px;
+  border-top: 1px solid orange;
+  justify-content: center;
+}
+
+.footer-text {
+  margin-right: 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons .MuiButton-root {
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+.follow-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: 70px;
+  margin-bottom: 30px;
+}
+
+.section-container h3 {
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+.section-container p {
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.section-container p:hover {
+  text-decoration: underline;
+}
+
+.newsletter-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.input-notched-outline .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+.footer-bottom {
+  color: white;
+}
+
+/* Homepage styles */
 .homepage {
   display: flex;
   height: 100vh;
@@ -28,7 +199,7 @@
   margin-right: 8px;
 }
 
-.logo {
+.sidebar .logo {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -78,7 +249,6 @@ nav ul li a:hover span {
   align-items: center;
   justify-content: flex-start;
   overflow-y: auto;
-
 }
 
 .search-filter {
@@ -114,23 +284,24 @@ nav ul li a:hover span {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-/* homepage.css */
 
-/* ... previous CSS rules ... */
+.search-bar button:hover {
+  background-color: #555;
+}
 
 .search-results {
   overflow-y: auto;
   width: 100%;
-  max-height: calc(100vh - 280px); /* Adjust the height based on your needs */
-  margin-top: 20px; /* Add margin for separation */
+  max-height: calc(100vh - 280px);
+  margin-top: 20px;
 }
 
 .search-result-profiles {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  padding: 20px; /* Add padding for spacing */
-  border-radius: 10px; /* Add border radius */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .search-result-profile {
@@ -167,33 +338,11 @@ nav ul li a:hover span {
   font-weight: bold;
 }
 
-.search-bar button:hover {
-  background-color: #555;
-}
-
-.search-results {
-  overflow-y: auto;
-  width: 100%;
-  max-height: calc(100vh - 280px); /* Adjust the height based on your needs */
-}
-
-.provider-profiles {
-  width: 60%;
+.default-avatar {
+  font-size: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.service-categories {
-  width: 40%;
-  margin-bottom: 20px;
-}
-
-.promotion-section {
-  width: 60%;
-  margin-bottom: 20px;
-}
-
-.carousel {
-  margin-top: 100px;
+  color: blue;
 }
 
 .pagination {
@@ -273,7 +422,7 @@ nav ul li a:hover span {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  background-color:#f1f1f1;
+  background-color: #f1f1f1;
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
@@ -288,9 +437,9 @@ nav ul li a:hover span {
   color: #800020;
 }
 
-.default-avatar {
-  font-size: 20px;
-  margin-top : 20px;
-  margin-bottom: 20px;
-  color: blue;
+/* Media Queries */
+@media (max-width: 768px) {
+  .header .navigation li {
+    margin-right: 5px;
+  }
 }
