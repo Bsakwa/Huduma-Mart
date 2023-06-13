@@ -118,13 +118,13 @@
   .signin-container {
     height: 100vh;
   }
-
+  
   .signup-page {
-    border-radius: 0;
+    border-radius: 20px;
     margin: 0;
-    box-shadow: none;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
   }
-
+  
   .signup-page h2 {
     margin-top: 0;
   }
