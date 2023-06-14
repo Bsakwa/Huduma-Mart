@@ -27,7 +27,7 @@ function ServiceProviderRegistrationForm() {
   useEffect(() => {
     // Fetch categories from the API
     axios
-      .get('http://100.25.222.45/api/v1/categories')
+      .get('http://localhost:5000/api/v1/categories')
       .then(response => {
         // Set the categories in state
         setCategories(response.data);
@@ -38,7 +38,7 @@ function ServiceProviderRegistrationForm() {
 
     // Fetch locations from the API
     axios
-      .get('http://100.25.222.45/api/v1/locations')
+      .get('http://localhost:5000/api/v1/locations')
       .then(response => {
         // Set the locations in state
         setLocations(response.data);
@@ -86,7 +86,7 @@ function ServiceProviderRegistrationForm() {
 
     // Make a POST request to create the new location
     axios
-      .post('http://100.25.222.45/api/v1/locations', newLocation)
+      .post('http://localhost:5000/api/v1/locations', newLocation)
       .then(response => {
         // Get the created location ID from the response
         const locationId = response.data.id;
@@ -113,7 +113,7 @@ function ServiceProviderRegistrationForm() {
 
           // Make a POST request to create the new service provider
           axios
-            .post('http://100.25.222.45/api/v1/service_providers', newServiceProvider)
+            .post('http://localhost:5000/api/v1/service_providers', newServiceProvider)
             .then(response => {
               // Handle the success response
               console.log('Service provider created successfully:', response.data);

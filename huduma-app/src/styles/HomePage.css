@@ -432,21 +432,24 @@ nav ul li a:hover span {
 /* Media Queries */
 @media (max-width: 768px) {
   .header .navigation li {
-    margin-right: 5px;
+    margin-right: 10px;
   }
-  
+
   .search-bar input[type="text"] {
     padding: 10px;
   }
   
   .sidebar {
-    width: 100%;
+    width: 20px;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
-    border-right: none;
+    border: none;
+    display:none;
   }
-  
-  .content {
-    padding: 10px;
+
+   .content {
+    padding: 50px;
   }
   
   .search-bar input[type="text"] {
@@ -480,7 +483,7 @@ nav ul li a:hover span {
   }
   
   .section-container {
-    margin-left: 10px;
+    margin-left: 20px;
   }
   
   .section-container h3 {
@@ -496,5 +499,6 @@ nav ul li a:hover span {
   .newsletter-section {
     margin-left: 0;
     align-items: flex-start;
+    align-items: center;
   }
 }

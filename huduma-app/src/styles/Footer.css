@@ -94,18 +94,25 @@
 /* Media queries for responsive design */
 
 @media (max-width: 767px) {
-  .section-container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-  }
-  
+ /* .section-container {
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center; /* align items horizontally to the center 
+    text-align: center;
+  }*/
+
   .footer-content {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    width : 100%;
+  }
+
+  .social-icons {
   }
   
-  .social-icons {
+  .follow-us-container {
     margin-top: 20px;
   }
 }

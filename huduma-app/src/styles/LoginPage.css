@@ -112,6 +112,10 @@
   .continue-container {
     width: 100%;
   }
+  .login-container {
+    overflow-y: auto;
+    height: auto;
+    }
 }
 
 @media screen and (max-width: 600px) {
