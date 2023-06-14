@@ -18,29 +18,21 @@ nav {
   width: 100px;
   height: 80px;
   margin-top: -20px;
+  border: none;
 }
 
 .slogan {
-  font-size: 20px;
-  color: #ccc;
-  margin-left: 40px;
-  font-weight: bold;
-  display: flex;
-  text-align: center;
-  margin-right: -100px;
+  display: none;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
 
 .search-bar input[type="text"] {
-  padding: 10px;
-  border: none;
-  border-radius: 30px;
-  outline: none;
-  background-color: white;
+  padding: 8px;
 }
 
 .search-icon {
@@ -52,11 +44,11 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
+  margin-left: auto;
 }
 
 .nav-links li {
   margin-left: 16px;
-  margin-top: 15px;
 }
 
 .nav-links a {
@@ -84,7 +76,7 @@ nav {
   }
 
   .nav-links {
-    margin-left: 0;
+    margin-left: auto;
   }
 }
 
@@ -441,5 +433,68 @@ nav ul li a:hover span {
 @media (max-width: 768px) {
   .header .navigation li {
     margin-right: 5px;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+  }
+  
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    border-right: none;
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .search-bar input[type="text"] {
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  
+  .search-result-profiles {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .footer {
+    padding: 10px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-text {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons .MuiButton-root {
+    font-size: 20px;
+  }
+  
+  .section-container {
+    margin-left: 10px;
+  }
+  
+  .section-container h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .section-container p {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .newsletter-section {
+    margin-left: 0;
+    align-items: flex-start;
   }
 }

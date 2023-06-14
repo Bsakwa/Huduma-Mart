@@ -12,20 +12,46 @@
   align-items: center;
   text-align: center;
   margin-bottom: 100px;
+  border-radius: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-intro-container {
+  margin-bottom: 40px;
+  border-top: 3px solid orange; /* Add a border-top */
+  padding-top: 20px; /* Add some padding above the border */
+}
+
+.hero-content {
+  margin-bottom: 40px;
+  border-bottom: 3px solid orange; /* Add a border-bottom */
+  padding-bottom: 20px; /* Add some padding below the border */
+}
+
+.or-divider {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 24px;
 }
 
 .hero-content .btn {
-  border-radius: 40px; /* Adjust the value to your desired radius */
+  border-radius: 40px;
   font-size: 18px;
   padding: 12px 30px;
-  background-color: #ff3542;
+  background-color: #4169e1;
   color: #fff;
   text-decoration: none;
   outline: none;
 }
 
+.btn-primary {
+  background-color: #800020; /* Change the default background color for consistency */
+  border-color: #b30015;
+  margin: 10px;
+}
+
 .hero-content .btn:hover {
-  background-color: #b30015;
+  background-color: #4682b4;
 }
 
 .hm-banner {
@@ -45,6 +71,7 @@
   font-size: 24px;
   margin-bottom: 24px;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 /* Featured category section */
@@ -133,7 +160,7 @@
 }
 
 .feature-card svg {
-  font-size: 40px; /* Increase the font size to make the icons larger */
+  font-size: 40px;
 }
 
 /* Testimonials section */

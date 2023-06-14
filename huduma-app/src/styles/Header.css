@@ -1,6 +1,5 @@
 /* Header styles */
 header {
-  background-color: #333;
   padding: 10px;
   height: auto;
 }
@@ -11,47 +10,29 @@ nav {
   justify-content: space-between;
 }
 
-.logo {
-  background-image: url("../assets/huduma.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100px; /* Adjust the width as per your requirements */
-  height: 80px;
-  margin-top: -20px;
-}
-
-.slogan {
-  font-size: 20px;
-  color: #ccc;
-  margin-left: 20px; /* Adjust the margin as per your requirements */
-  font-weight: bold;
+.header-container {
   display: flex;
-  text-align: center;
-}
-
-.search-bar {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-.search-bar input[type="text"] {
-  padding: 10px;
-  border: none;
-  border-radius: 30px;
-  outline: none;
-  background-color: white;
+.logo-container {
+  margin-right: 20px;
+  border:none;
 }
 
-.search-icon {
-  color: orange;
-  margin-left: 8px;
-  cursor: pointer;
+.logo {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background-image: url(../assets/huduma.png);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  margin-left: 20px; /* Adjust the margin as per your requirements */
+  align-items: center; /* Add this to vertically align the nav links with the login button */
 }
 
 .nav-links li {
@@ -67,19 +48,19 @@ nav {
   color: #ccc;
 }
 
+.btn .btn-primary {
+  border-radius: 30px;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .logo {
-    width: 80px; /* Adjust the width as per your requirements */
+    width: 80px;
     margin-top: 0;
   }
 
   .slogan {
     display: none;
-  }
-
-  .search-bar input[type="text"] {
-    padding: 8px;
   }
 
   .nav-links li {
