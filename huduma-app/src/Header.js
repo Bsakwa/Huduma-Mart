@@ -6,19 +6,18 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div className="logo">
-        </div>
-        <div className="slogan">
-          Accessibility. Visibility. Service.
-        </div>
-        <div> {/* Added opening div tag */}
+        <div className="header-container">
+          <div className="logo-container">
+            <img src="./assets/huduma.png" alt="" className="logo" />
+          </div>
           <ul className="nav-links">
+            <li><Link to="/home">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/login">Login</Link></li>
           </ul>
-        </div> {/* Removed extra closing div tag */}
+          <a href="/login" className="btn btn-primary">Login</a>
+        </div>
       </nav>
     </header>
   );

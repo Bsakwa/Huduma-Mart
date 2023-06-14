@@ -12,11 +12,18 @@ const LandingPage = () => {
       <section className="hero">
         <div className="hero-content">
           <img src="logo.png" alt="" className="hm-banner" />
-          <div className="hero-buttons">
-            <h2>Sign Up to find service providers at your location</h2>
-            <a href="/signup" className="btn btn-primary">Sign Up</a>
-            <h2>Register as a service provider and be visible and accessible</h2>
-            <a href="/register" className="btn btn-secondary">Register</a>
+          <div className="hero-intro-container">
+            <div className="hero-intro">
+              <h2>Sign Up to Discover Service Providers</h2>
+	      <p className="or-divider">OR</p>
+              <h2>Register as a Service Provider</h2>
+            </div>
+            <div className="hero-buttons">
+              <div className="hero-button-container">
+                <a href="/signup" className="btn btn-primary">Sign Up</a>
+                <a href="/register" className="btn btn-secondary">Register</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -99,7 +106,7 @@ const LandingPage = () => {
               <h4 className="testimonial-name">Mark Johnson</h4>
               <p className="testimonial-profession">User</p>
               <blockquote className="testimonial-quote">
-                "Huduma Mart has been a game changer. It is easy and convinient to access any service from any location."
+                "Huduma Mart has been a game changer. It is easy and convenient to access any service from any location."
               </blockquote>
             </div>
           </div>
@@ -109,7 +116,7 @@ const LandingPage = () => {
               <h4 className="testimonial-name">Sarah Williams</h4>
               <p className="testimonial-profession">User</p>
               <blockquote className="testimonial-quote">
-                "Huduma mart has made me discover alot of businesses around my location that I didn't know existed."
+                "Huduma Mart has made me discover a lot of businesses around my location that I didn't know existed."
               </blockquote>
             </div>
           </div>
