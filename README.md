@@ -26,9 +26,8 @@ HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./fakeserviceproviders.py
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./fakeusers.py
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./fakereviews.py
-
-* It is important to run these commands in the order they are listed inorder to observe the mapping and relationship rules between the database objects
 ```
+* It is important to run these commands in the order they are listed inorder to observe the mapping and relationship rules between the database objects
 
 ### Step 3: CD into huduma-app directory to install the necessary dependencies for the project
 ```
@@ -54,3 +53,33 @@ curl http://localhost:5000/api/v1/reviews
 ```
 npm start
 ```
+* This command will run the app in development mode on http://localhost:3000
+
+# Huduma-App Screenshots
+
+* These are some of the pages that you should expect to see should the app launch without any problems and it should.
+
+<p align="center">
+  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc1.png"
+       alt="scr">
+</p>
+
+---
+
+<p align="center">
+  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc2.png"
+       alt="scr">
+</p>
+
+---
+
+<p align="center">
+  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc3.png"
+       alt="scr">
+</p>
+
+---
+<p align="center">
+  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc4.png"
+       alt="scr">
+</p>
