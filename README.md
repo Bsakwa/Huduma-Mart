@@ -83,3 +83,9 @@ npm start
   <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc4.png"
        alt="scr">
 </p>
+
+---
+<p align="center">
+  <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc5.png"
+       alt="scr">
+</p>
