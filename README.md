@@ -94,6 +94,12 @@ npm start
 
 * As you can see the project is still in it's MVP stage with the most important functionality already in place. The search and filter functionality which enables users to access service providers signed up on the platform. We are inviting collaborators so that we can take this great project a notch higher. The scope of the project remains big but we believe that if we do it one step at a time we will be on the verge of a long overdue technological disruption in Africa's informal sector. 
 
+## Technical Challenges
+
+Our project took us on a rollercoaster of wins and failures. There is still alot to be done but we might be limited in terms of the technical know how since we are still learning the ropes of Software Development. One significant challenge that we encountered in the course of building our web application was intergrating out API built in python to serve our front end built in Javascript. It works when we run our API from localhost but over a web server the browser `blocks loading mixed active content`. We were made aware that using Flask API for our REACT application was not the most sound approach based on the traditional stack approaches LAMP, MERN or MERP should be the guidelines. However, we built the project based on what we knew at the time and we are willing to build on top of that whilst making the necessary trade offs. All the same we remain immensely proud of what we were capable of doing and we are looking forward to see the project grow and evolve in the future.
+
+
+---
 ## :coffee: Buy us a coffee and support us in our journey
 
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate/?hosted_button_id=WTJ7G8WQJZKKW)
