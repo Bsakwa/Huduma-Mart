@@ -92,7 +92,7 @@ npm start
 
 ---
 
-* As you can see the project is still in it's MVP stage with the most important functionality already in place. The search and filter functionality which enables users to access service providers signed up on the platform. We are inviting collaborators so that we can take this great project a notch higher. The scope of the project remains big but we believe that if we do it one step at a time we will be on the verge of a long overdue technological disruption in Africa's informal sector. 
+* As you can see the project is still in it's MVP stage with the most important functionality already in place. The search and filter functionality enables users to access service providers signed up on the platform in any location at any time. We are inviting collaborators to chip in with their innovative ideas so that we can take this great project a notch higher. The scope of the project remains big but we believe that if we do it one step at a time we will be on the verge of a long overdue technological disruption in Africa's informal sector. 
 
 ## Technical Challenges
 
