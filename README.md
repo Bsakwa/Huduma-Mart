@@ -94,12 +94,11 @@ npm start
 
 * As you can see the project is still in it's MVP stage with the most important functionality already in place. The search and filter functionality which enables users to access service providers signed up on the platform. We are inviting collaborators so that we can take this great project a notch higher. The scope of the project remains big but we believe that if we do it one step at a time we will be on the verge of a long overdue technological disruption in Africa's informal sector. 
 
-## Buy us a coffee and support us in our journey
+## :coffee: Buy us a coffee and support us in our journey
 
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/)
 
-Support us by buying a coffee! Click the PayPal icon above to make a donation directly to our PayPal account.
+Support us by buying a coffee! Click the PayPal icon above to make a donation directly to our PayPal accounts below. Thank you
 
 **Brian Sakwa:** `www.sakwabrian23@gmail.com`
 **Myra Sukantet:** `myrasanaa17@gmail.com`
-
