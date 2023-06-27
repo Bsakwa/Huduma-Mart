@@ -2,9 +2,9 @@
 
 This is a team project that we built, as part of our portfolio project during our Software Engineering Programme. Our project aimed at addressing two of Africa's biggest problems namely, access to income and income generating opportunities. With this in mind, we hoped to bridge this gap by increasing the visibility and accessibility of the Africa's biggest workforce i.e the informal sector and effect the much needed technological disruption in this space. Our web application provides a platform for service providers to be more visible and accessibile to a vast network of potential clients all the while ensuring clients have a range service providers within their reach at any location and at any given time.
 
-# Set up
+# Set up :gear:
 
-### Clone the repository to your local terminal
+### Step 1: Clone the repository to your local terminal
 ```
 git clone https://github.com/Bsakwa/Huduma-Mart.git
 ```
@@ -19,7 +19,7 @@ cat huduma_db_setup.sql | sudo mysql
 cat huduma_db_setup.sql | mysql -u root -p
 ```
 
-### Step 2: Populate your database with all the required objects for the project
+### Step 3: Populate your database with all the required objects for the project
 ```
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./fakecategories.py
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db ./fakelocations.py
@@ -29,12 +29,12 @@ HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=
 ```
 * It is important to run these commands in the order they are listed inorder to observe the mapping and relationship rules between the database objects
 
-### Step 3: CD into huduma-app directory to install the necessary dependencies for the project
+### Step 4: CD into huduma-app directory to install the necessary dependencies for the project
 ```
 npm install
 ```
 
-### Step 4: Set up your Flask API to run in one terminal window
+### Step 5: Set up your Flask API to run in one terminal window
 ```
 HUDUMA_MYSQL_USER=huduma_dev HUDUMA_MYSQL_PASS=huduma_dev_pwd HUDUMA_MYSQL_HOST=localhost HUDUMA_MYSQL_DB=huduma_db HUDUMA_MYSQL_STORAGE=db HUDUMA_API_HOST=0.0.0.0 HUDUMA_API_PORT=5000 python3 -m api.v1.app
 ```
@@ -49,7 +49,7 @@ curl http://localhost:5000/api/v1/users
 curl http://localhost:5000/api/v1/reviews
 ```
 
-### Step 5: Run the huduma-app web application
+### Step 6: Run the huduma-app web application
 ```
 npm start
 ```
