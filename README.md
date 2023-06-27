@@ -96,9 +96,9 @@ npm start
 
 ## :coffee: Buy us a coffee and support us in our journey
 
-[![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/)
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate/?hosted_button_id=WTJ7G8WQJZKKW)
 
-Support us by buying a coffee! Click the PayPal icon above to make a donation directly to our PayPal accounts below. Thank you
+Support us by buying a coffee! Click the PayPal icon above to make a donation directly to our PayPal accounts. Thank you
 
 **Brian Sakwa:** `www.sakwabrian23@gmail.com`
 **Myra Sukantet:** `myrasanaa17@gmail.com`
