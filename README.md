@@ -60,26 +60,26 @@ npm start
 * These are some of the pages that you should expect to see should the app launch without any problems and it should.
 
 <p align="center">
-  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc1.png"
+  <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc1.png"
        alt="scr">
 </p>
 
 ---
 
 <p align="center">
-  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc2.png"
+  <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc2.png"
        alt="scr">
 </p>
 
 ---
 
 <p align="center">
-  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc3.png"
+  <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc3.png"
        alt="scr">
 </p>
 
 ---
 <p align="center">
-  <img src="https://github.com/Bsakwa/Huduma-Mart/tree/main/assets/sc4.png"
+  <img src="https://github.com/Bsakwa/Huduma-Mart/blob/main/assets/sc4.png"
        alt="scr">
 </p>
