@@ -18,14 +18,14 @@
 
 .hero-intro-container {
   margin-bottom: 40px;
-  border-top: 3px solid orange; /* Add a border-top */
-  padding-top: 20px; /* Add some padding above the border */
+  border-top: 3px solid orange;
+  padding-top: 20px;
 }
 
 .hero-content {
   margin-bottom: 40px;
-  border-bottom: 3px solid orange; /* Add a border-bottom */
-  padding-bottom: 20px; /* Add some padding below the border */
+  border-bottom: 3px solid orange;
+  padding-bottom: 20px;
 }
 
 .or-divider {
@@ -34,7 +34,13 @@
   margin-bottom: 24px;
 }
 
-.hero-content .btn {
+.hero-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-register-container .btn {
   border-radius: 40px;
   font-size: 18px;
   padding: 12px 30px;
@@ -45,12 +51,12 @@
 }
 
 .btn-primary {
-  background-color: #800020; /* Change the default background color for consistency */
+  background-color: #800020;
   border-color: #b30015;
   margin: 10px;
 }
 
-.hero-content .btn:hover {
+.hero-register-container .btn:hover {
   background-color: #4682b4;
 }
 
@@ -127,14 +133,14 @@
 }
 
 .feature-card {
-  flex: 0 0 100%;
-  max-width: 100%;
+  flex: 0 0 calc(50% - 20px); /* Adjust the card width here */
+  max-width: calc(50% - 20px); /* Adjust the card max-width here */
   text-align: center;
   margin-bottom: 25px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  margin-right: 0;
+  margin-right: 20px;
   box-sizing: border-box;
 }
 
@@ -251,10 +257,9 @@
   }
   
   .feature-card {
-    flex: 0 0 48%;
-    max-width: 48%;
-    margin-right: 4%;
-    margin-bottom: 20px;
+    flex: 0 0 calc(50% - 10px); /* Adjust the card width here */
+    max-width: calc(50% - 10px); /* Adjust the card max-width here */
+    margin-right: 10px;
   }
   
   .testimonial {
@@ -277,8 +282,8 @@
   }
   
   .feature-card {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 calc(100% - 20px); /* Adjust the card width here */
+    max-width: calc(100% - 20px); /* Adjust the card max-width here */
     margin-right: 0;
   }
   
