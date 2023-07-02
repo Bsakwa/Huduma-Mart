@@ -4,19 +4,20 @@ import './styles/Header.css';
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <div className="header-container">
-          <div className="logo-container">
-            <img src="./assets/huduma.png" alt="" className="logo" />
-          </div>
-          <ul className="nav-links">
-            <li><Link to="/home">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-          <a href="/login" className="btn btn-primary">Login</a>
+    <header className="headr">
+      <nav className="navbar">
+        <div className="logo-container">
+          <Link to="/" className="logo-link">
+          </Link>
+        </div>
+        <ul className="nav-links">
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/about">About us</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+        <div className="auth-buttons">
+          <Link to="/login" className="btn">Login</Link>
+          <Link to="/signup" className="btns btns-secondary">Sign Up</Link>
         </div>
       </nav>
     </header>

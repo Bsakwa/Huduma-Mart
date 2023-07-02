@@ -8,6 +8,7 @@ import Header from './Header';
 import LandingPage from './LandingPage';
 import HomePage from './HomePage';
 import About from './About';
+import ContactForm from './Contact';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignupUserPage />} />
+	<Route path="/contact" element={<ContactForm />} />
       </Routes>
       <Footer />
     </Router>
@@ -35,6 +37,7 @@ function HeaderWithRoutes() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupUserPage />} />
         <Route path="/about" element={<About />} />
+	<Route path="/contact" element={<ContactForm />} />
       </Routes>
     </>
   );
