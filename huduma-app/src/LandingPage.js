@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FaEye, FaGlobe, FaUsers, FaHandshake } from 'react-icons/fa';
+import { FaEye, FaGlobe, FaUsers, FaHandshake, FaStar } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import './styles/LandingPage.css';
 
@@ -11,19 +11,21 @@ const LandingPage = () => {
       {/* Hero section */}
       <section className="hero">
         <div className="hero-content">
-          <img src="logo.png" alt="" className="hm-banner" />
           <div className="hero-intro-container">
             <div className="hero-intro">
-              <h2>Sign Up to Discover Service Providers</h2>
-	      <p className="or-divider">OR</p>
               <h2>Register as a Service Provider</h2>
+              <p className="hero-description">
+                Showcase your services and skills and find paid opportunities.
+              </p>
             </div>
-            <div className="hero-buttons">
-              <div className="hero-button-container">
-                <a href="/signup" className="btn btn-primary">Sign Up</a>
+            <div className="hero-register-container">
+              <div className="hero-register-button">
                 <a href="/register" className="btn btn-secondary">Register</a>
               </div>
             </div>
+          </div>
+          <div className="hero-image">
+            <img src="./assets/barber.jpg" alt="" />
           </div>
         </div>
       </section>
@@ -72,6 +74,13 @@ const LandingPage = () => {
             </IconContext.Provider>
             <h3>Convenience</h3>
             <p>Enjoy the convenience of accessing day-to-day services with just a few clicks. With Huduma Mart, life just got a little easier.</p>
+          </div>
+          <div className="feature-card">
+            <IconContext.Provider value={{ className: 'feature-icon' }}>
+              <FaStar />
+            </IconContext.Provider>
+            <h3>Rating and Reviews</h3>
+            <p>Build trust and credibility with your customers by receiving ratings and reviews for your services. Showcase your excellent work and attract more clients.</p>
           </div>
         </div>
       </section>
