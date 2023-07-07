@@ -1,8 +1,11 @@
 /* Header.css */
 
+/* Header.css */
+
 .headr {
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  height: 90px;
 }
 
 .navbar {
@@ -13,14 +16,15 @@
 }
 
 .logo-container {
-  background-image: url('../assets/hudumalogo.png');
+  background-image: url('../assets/hm.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 70px; /* Adjust the height as needed */
-  width: 150px; /* Adjust the width as needed */
+  height: 60px;
+  width: 150px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .web-app-name {
@@ -34,8 +38,8 @@
   margin: 0;
   padding: 10px;
   display: flex;
-  align-items: left;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .nav-links li {
@@ -56,6 +60,7 @@
   align-items: center;
   margin-left: auto;
   border-radius: 20px;
+  gap: 10px;
 }
 
 .btns {
@@ -79,11 +84,70 @@
   color: white;
 }
 
-.btn:hover {
+.btns:hover {
   cursor: pointer;
   background-color: white;
 }
 
-.btn-secondary:hover {
+.btns-secondary:hover {
   background-color: darkgray;
+}
+
+.login-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.signup-button:hover {
+  color: white; /* Set the text color to white when hovered over */
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hamburger .MuiIconButton-root {
+  color: black;
+}
+
+.drawer {
+  width: 240px;
+}
+
+.drawer .MuiList-padding {
+  padding: 0;
+}
+
+.drawer .MuiListItem-root {
+  justify-content: flex-start;
+}
+
+.drawer .MuiListItem-root:hover {
+  background-color: lightgray;
+}
+
+.drawer .MuiListItemText-root {
+  margin-left: 16px;
+}
+
+@media (max-width: 1024px) {
+  .logo-container {
+    margin-bottom: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
 }
